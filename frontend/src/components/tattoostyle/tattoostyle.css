@@ -1,0 +1,9 @@
+:root {
+    --primary-color: black;
+    --secondary-color: #C7CDBE;
+    --secondary-color-hover: #e7eddc;
+    --third-color: rgb(36, 36, 36);
+    --third-color-hover: #434343;
+    --payoff: yellow;
+    --white: white;
+}

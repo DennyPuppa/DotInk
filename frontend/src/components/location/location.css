@@ -1,0 +1,45 @@
+:root {
+    --primary-color: black;
+    --secondary-color: #C7CDBE;
+    --secondary-color-hover: #e7eddc;
+    --third-color: rgb(36, 36, 36);
+    --third-color-hover: #434343;
+    --payoff: yellow;
+    --white: white;
+}
+
+.location-search-first {
+    background-color: var(--third-color);
+    padding: 10px 30px;
+    border-radius: 15px 50px 50px 15px;
+    border: none;
+    color: var(--white);
+}
+
+.location-search-btn {
+    background-color: var(--secondary-color);
+    padding: 10px 30px;
+    border-radius: 50px 15px 15px 50px;
+    border: none;
+    color: var(--third-color);
+}
+
+.location-search-btn:hover {
+    background-color: var(--secondary-color-hover);
+    color: var(--third-color);
+    transition: all ease-in-out 0.1s;
+}
+
+.reset{
+    background-color: transparent;
+    border: none;
+}
+
+.reset:focus{
+    background-color: transparent;
+    border: none !important;
+}
+
+.fa-solid.fa-location-dot{
+    color: #5b5b5b;
+}

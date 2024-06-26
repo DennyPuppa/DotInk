@@ -1,0 +1,13 @@
+.color {
+    
+    overflow-y: scroll;
+    max-height: calc(100vh - 55px);
+}
+
+@media screen and (max-width: 426px) {
+
+    .color {
+        background-color: transparent;
+        border: none;
+    }
+}

@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #050402;
+    --secondary-color: #C7CDBE;
+    --secondary-color-hover: #e7eddc;
+    --third-color: #242424;
+    --third-color-hover: #434343;
+    --payoff: yellow;
+    --white: white;
+}
+
+.side-nav {
+    position: sticky;
+    top: 50px;
+    overflow-y: scroll;
+    max-height: 100vh;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
