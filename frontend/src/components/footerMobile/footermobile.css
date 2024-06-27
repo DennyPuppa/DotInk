@@ -1,8 +1,40 @@
+:root {
+    --black: rgb(11, 13, 24);
+    --black-absolute: rgba(11, 13, 24, 0.5);
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
+}
+
 footer{
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    background-color: var(--white);
+}
+
+.footer-icon{
+    color: var(--black);
+    font-size: 25px;
+}
+
+.logo-footer{
+    width: 50px;
     height: 50px;
-    background-color: black;
+    background-color: var(--grey);
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 12px;
+}
+
+.footer-avatar-picture{
+    width: 30px;
+    height: 30px;
+}
+
+.footer-avatar-picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

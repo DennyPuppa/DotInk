@@ -1,22 +1,19 @@
 :root {
-    --primary-color: black;
-    --secondary-color: #C7CDBE;
-    --secondary-color-hover: #e7eddc;
-    --third-color: rgb(36, 36, 36);
-    --third-color-hover: #434343;
-    --payoff: yellow;
-    --white: white;
-
-    --test1: #111010;
+    --black: rgb(11, 13, 24);
+    --black-absolute: rgba(11, 13, 24, 0.5);
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
 }
 
 p{
     margin: 0 !important;
+    font-family: "Jost", sans-serif;
 }
 
 .post-card{
     border-radius: 25px;
-    background-color: var(--test1);
+    background-color: var(--white);
 }
 
 .artist-picture{
@@ -31,14 +28,14 @@ p{
 
 .post-img-container{
     width: 100%;
-    height: 300px;
+    height: 350px;
     position: relative;
 }
 .post-img-container img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 25px 25px 0 0;
 }
 
 .icon-container{
@@ -50,13 +47,23 @@ p{
 }
 
 .icon-circle{
-    width: 40px;
-    height: 40px;
-    background-color: var(--test1);
+    width: 50px;
+    height: 50px;
+    background-color: var(--black-absolute);
     text-align: center;
     border-radius: 50%;
 }
 
 .icon-circle i{
-    padding-top: 12px;
+    padding-top: 15px;
+}
+
+.post-icon{
+    color: var(--white);
+    font-size: large;
+}
+
+.artist-info p:nth-of-type(1) span{
+    font-weight: 800;
+    font-size: large;
 }

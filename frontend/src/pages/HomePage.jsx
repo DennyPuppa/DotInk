@@ -8,7 +8,7 @@ import FooterMobile from "../components/footerMobile/FooterMobile";
 
 const HomePage = () => {
     const { session, decodedSession } = useSession()
-    console.log(decodedSession);
+    // console.log(decodedSession);
 
     return (
         <>

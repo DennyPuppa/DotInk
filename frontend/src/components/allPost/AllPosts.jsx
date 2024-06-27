@@ -31,9 +31,10 @@ const AllPosts = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                {allPosts.map((post, index) => (
-                    <div className='col py-5' key={`singlepost-${index}`}>
+                <div className='col'>
+                    {allPosts.map((post, index) => (
                         <SinglePost
+                            key={`singlepost-${index}`}
                             artist={post.artistId.username}
                             city={post.artistId.city}
                             title={post.title}
@@ -44,9 +45,10 @@ const AllPosts = (props) => {
                             avatar={post.artistId.avatar}
                             style={post.tattoostyle}
                         />
-                    </div>
-                ))}
-            </div>  
+
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

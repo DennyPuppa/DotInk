@@ -19,6 +19,7 @@ login.post('/login/artist', async (req, res) => {
             return res.status(403).send('Username o Password non valida');
         }
         const token = jwt.sign({
+            _id: artist._id,
             firstname: artist.firstname,
             lastname: artist.lastname,
             email: artist.email,

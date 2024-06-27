@@ -1,39 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Playwrite+NZ&display=swap');
-
 :root {
-    --primary-color: #050402;
-    --secondary-color: #C7CDBE;
-    --secondary-color-hover: #e7eddc;
-    --third-color: #242424;
-    --third-color-hover: #434343;
-    --payoff: yellow;
-    --white: white;
+    --black: #0b0d18;
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
 }
 
-/* Font */
-.playwrite-nz {
-    font-family: "Playwrite NZ", cursive;
+.nav-icon{
+    color: var(--black);
+    font-size: x-large;
+}
+
+.logo{
+    font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 900;
     font-style: normal;
-    color: var(--white);
-    font-size: xx-large;
-}
-
-.caveat {
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--payoff);
-    font-size: large;
-    padding-top: 5px;
-}
-
-.fa-droplet{
-    color: var(--payoff);
-    font-size: xx-large;
+    font-size: 24px;
 }
 
 /* CSS */

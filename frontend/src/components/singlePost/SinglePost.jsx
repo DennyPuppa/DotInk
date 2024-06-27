@@ -1,48 +1,38 @@
-import GeneralBtn from "../generalBtn/GeneralBtn";
 import "./singlePost.css"
 import { useNavigate } from "react-router-dom";
+import GeneralBtn from "../generalBtn/GeneralBtn";
 
 const SinglePost = ({ artist, city, title, description, image, postLike, _id, avatar, style }) => {
 
     const navigate = useNavigate();
 
     const navigateToDetails = () => {
-        navigate("/author/" + _id)
+        navigate("/artist/" + _id)
     }
 
-    return (
-        <div className="post-card">
-            <div className="post-img-container">
-                <img src={image} alt="post Image" />
-                <div className="d-flex justify-content-between icon-container">
-                    <div className="icon-circle">
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div className="icon-circle">
-                        <i class="fa-solid fa-calendar"></i>
-                    </div>
-                </div>
-            </div>
-            <div className="d-flex align-items-center gap-2 post-artist-section">
-                <div className="artist-picture">
-                    <img className="rounded-circle" src={avatar} alt="" />
-                </div>
-                <div className="d-flex flex-column">
-                    <p onClick={navigateToDetails}>{artist}</p>
-                    <p>{city}</p>
-                </div>
-            </div>
 
-            <div>
-                <p>{title}</p>
-                <p>{description}</p>
-                <p>#{style}</p>
-            </div>
-            <div className="d-flex justify-content-between">
-                <div className="d-flex align-items-center gap-2">
-                    <i class="fa-regular fa-heart"></i>
+    return (
+        <div className="py-3">
+            <div className="post-card">
+                <div className="post-img-container">
+                    <img src={image} alt="post Image" />
+                    <div className="d-flex justify-content-between icon-container">
+                        <div className="icon-circle">
+                            <i class="fa-regular fa-heart post-icon"></i>
+                        </div>
+                        <div className="icon-circle">
+                            <i class="fa-solid fa-calendar post-icon"></i>
+                        </div>
+                    </div>
                 </div>
-                <GeneralBtn btnText={"Take an Appointment"} />
+
+                <div className="artist-info py-3 px-4">
+                    <div className="d-flex justify-content-between align-items-center">
+                        <p onClick={navigateToDetails}><span>@{artist}</span>, {city}</p>
+                        <GeneralBtn btnText={`#${style}`} />
+                    </div>
+                    <p>{description}</p>
+                </div>
             </div>
         </div>
     )

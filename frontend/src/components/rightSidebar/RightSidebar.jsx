@@ -1,5 +1,4 @@
 import useSession from "../../hooks/useSession";
-import NavbarInk from "../navbar/MyNavDesktop";
 import './rightsidebar.css'
 
 

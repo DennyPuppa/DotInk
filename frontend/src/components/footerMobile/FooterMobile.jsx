@@ -7,18 +7,25 @@ import './footermobile.css'
 const FooterMobile = () => {
 
     const { session, decodedSession } = useSession()
-    console.log(decodedSession);
+    // console.log(decodedSession);
 
     return (
-        <footer className='container-fluid'>
+        <footer className='container-fluid py-3'>
             <div className="row">
                 <div className="col-12">
-                    <div className='d-flex justify-content-evenly'>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <i class="fa-solid fa-calendar"></i>
+                    <div className='d-flex justify-content-evenly align-items-center'>
+                        <Link className='nav-link' to="/"><i class="fa-solid fa-house footer-icon"></i></Link>
+                        <i class="fa-solid fa-paper-plane footer-icon"></i>
+                        <div className='logo-footer'>
+                            <Link className='nav-link' to={decodedSession ? "/create-post" : "/login"}><i class="fa-solid fa-droplet footer-icon"></i></Link>
+                        </div>                        
+                        <i class="fa-solid fa-calendar footer-icon"></i>
+                        {!decodedSession && (<i class="fa-solid fa-user footer-icon"></i>)}
+                        {decodedSession && (
+                            <div className='footer-avatar-picture'>
+                                <img className='rounded-circle' src={decodedSession.avatar} alt="" />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

@@ -1,17 +1,16 @@
 :root {
-    --primary-color: black;
-    --secondary-color: #C7CDBE;
-    --secondary-color-hover: #e7eddc;
-    --third-color: rgb(36, 36, 36);
-    --third-color-hover: #434343;
-    --payoff: yellow;
-    --white: white;
+    --black: rgb(11, 13, 24);
+    --black-absolute: rgba(11, 13, 24, 0.5);
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
 }
 
 .general-btn{
-    background-color: var(--payoff);
-    color: var(--third-color);
+    background-color: var(--black);
+    color: var(--light);
     border-radius: 25px;
+    padding: 5px 15px;
+    font-weight: 600;
     border: none;
-    padding: 10px 15px;
 }

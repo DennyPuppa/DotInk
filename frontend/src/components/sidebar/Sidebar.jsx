@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useSession from "../../hooks/useSession";
-import NavbarInk from "../navbar/MyNavDesktop";
+import NavbarInk from "../navbar/MyNav";
 import './sidebar.css'
 
 
