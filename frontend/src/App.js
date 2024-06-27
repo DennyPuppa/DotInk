@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import ErrorPage from "./pages/ErrorPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";
+import MyProfile from "./pages/MyProfile";
+import PublicPostPage from "./pages/PostPage";
 
 const App = () => {
 
@@ -14,7 +16,8 @@ const App = () => {
                 <Route path="/registrazione" element={<RegistrationPage />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/artist/:id" element={<Profile />}/>
-                <Route path="/account" element={<Profile />}/>
+                <Route path="/account" element={<MyProfile />}/>
+                <Route path="/post/create" element={<PublicPostPage />}/>
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
         </BrowserRouter>

@@ -17,14 +17,16 @@ const FooterMobile = () => {
                         <Link className='nav-link' to="/"><i class="fa-solid fa-house footer-icon"></i></Link>
                         <i class="fa-solid fa-paper-plane footer-icon"></i>
                         <div className='logo-footer'>
-                            <Link className='nav-link' to={decodedSession ? "/create-post" : "/login"}><i class="fa-solid fa-droplet footer-icon"></i></Link>
-                        </div>                        
+                            <Link className='nav-link' to={decodedSession ? "/post/create" : "/login"}><i class="fa-solid fa-droplet footer-icon"></i></Link>
+                        </div>
                         <i class="fa-solid fa-calendar footer-icon"></i>
-                        {!decodedSession && (<i class="fa-solid fa-user footer-icon"></i>)}
+                        {!decodedSession && (<Link className='nav-link' to="/login"><i class="fa-solid fa-user footer-icon"></i></Link>)}
                         {decodedSession && (
-                            <div className='footer-avatar-picture'>
-                                <img className='rounded-circle' src={decodedSession.avatar} alt="" />
-                            </div>
+                            <Link to="/account">
+                                <div className='footer-avatar-picture'>
+                                    <img className='rounded-circle' src={decodedSession.avatar} alt="" />
+                                </div>
+                            </Link>
                         )}
                     </div>
                 </div>

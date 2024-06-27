@@ -2,10 +2,9 @@ import useSession from "../../hooks/useSession";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import GeneralBtn from '../generalBtn/GeneralBtn';
-import './artistProfile.css'
 
 
-const ArtistProfile = () => {
+const MyAccount = () => {
     const { session, decodedSession } = useSession()
     // console.log(decodedSession);
 
@@ -18,7 +17,7 @@ const ArtistProfile = () => {
     const getArtistInfo = async () => {
         setIsLoading(true)
         try {
-            const response = await fetch(process.env.REACT_APP_BASEURL + `/artist/${id.id}`)
+            const response = await fetch(process.env.REACT_APP_BASEURL + `/artist/${decodedSession._id}`)
             const data = await response.json()
             setIsLoading(false)
             setArtistInfo(data)
@@ -53,13 +52,13 @@ const ArtistProfile = () => {
                 </div>
             </div>
             <div>
-                {/* {artistPost.map(post => {
+                {artistPost.map(post => {
                     console.log(post);
                     <p>{post.title}</p>
-                })} */}
+                })}
             </div>
         </div>
     )
 }
 
-export default ArtistProfile;
+export default MyAccount;

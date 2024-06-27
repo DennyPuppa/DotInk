@@ -5,7 +5,7 @@ import './rightsidebar.css'
 const RightSidebar = () => {
 
     const { session, decodedSession } = useSession()
-    console.log(decodedSession);
+    // console.log(decodedSession);
 
     return (
         <div className="container-fluid side-nav invisible-scrollbar">

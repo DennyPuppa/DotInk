@@ -46,7 +46,7 @@ const AllPosts = (props) => {
                             style={post.tattoostyle}
                         />
 
-                    ))}
+                    )).reverse()}
                 </div>
             </div>
         </div>

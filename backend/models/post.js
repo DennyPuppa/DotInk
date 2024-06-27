@@ -19,10 +19,10 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    tattoostyle: [{
+    tattoostyle: {
         type: String,
         required: true
-    }],
+    },
     postLike: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist'

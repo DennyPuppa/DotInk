@@ -55,7 +55,7 @@ post.post('/artist/:id/post/create', cloudUpload.single('postImg'), async (req, 
         title: req.body.title,
         description: req.body.description,
         artistId: id,
-        image: req.body.image,
+        image: req.file.path,
         tattoostyle: req.body.tattoostyle
     })
     try {
