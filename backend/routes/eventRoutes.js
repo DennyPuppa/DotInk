@@ -54,15 +54,15 @@ event.post('/artist/:id/event/create', cloudUpload.single('eventImg'), async (re
     const newEvent = new EventModel({
         title: req.body.title,
         artistId: id,
-        image: req.body.image,
-        date: req.body.date
+        image: req.file.path,
+        date: req.body.date,
+        city: req.body.city
     })
     try {
         const dbEvent = await newEvent.save();
         const artista = await ArtistModel.findById(id);
         artista.event.push(dbEvent);
         await artista.save();
-        console.log(artista);
         res.status(201).json(dbEvent);
     } catch (error) {
         // res.status(500).json({ message: err.message });

@@ -1,7 +1,4 @@
-import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
-import axios from "axios";
-import { Col, Row } from 'react-bootstrap';
 import SinglePost from '../singlePost/SinglePost';
 
 
@@ -17,7 +14,6 @@ const AllPosts = (props) => {
             const data = await response.json()
             setIsLoading(false)
             setAllPosts(data)
-            console.log(data);
             return data
         } catch (error) {
             console.log(error.message)

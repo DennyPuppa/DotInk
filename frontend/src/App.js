@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";
 import MyProfile from "./pages/MyProfile";
 import PublicPostPage from "./pages/PostPage";
+import PublicEventPage from "./pages/EventPage";
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/artist/:id" element={<Profile />}/>
                 <Route path="/account" element={<MyProfile />}/>
                 <Route path="/post/create" element={<PublicPostPage />}/>
+                <Route path="/event/create" element={<PublicEventPage />}/>
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
         </BrowserRouter>

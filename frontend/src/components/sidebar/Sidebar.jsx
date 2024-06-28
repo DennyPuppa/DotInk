@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
 
     const { session, decodedSession } = useSession()
-    console.log(decodedSession);
 
     return (
         <div className="container-fluid side-nav invisible-scrollbar">
@@ -22,16 +21,6 @@ const Sidebar = () => {
                             </div>
                             <p>{decodedSession.username}</p>
                             <p>{decodedSession.city}</p>
-                            <div className="d-flex gap-3">
-                                <div className="d-flex flex-column align-items-center">
-                                    <p>{decodedSession.post.length}</p>
-                                    <p>Post</p>
-                                </div>
-                                <div className="d-flex flex-column align-items-center">
-                                    <p>{decodedSession.follows.length}</p>
-                                    <p>Followers</p>
-                                </div>
-                            </div>
                         </div>
                     )}
                     <hr />

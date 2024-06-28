@@ -2,6 +2,7 @@ import useSession from "../../hooks/useSession";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import GeneralBtn from '../generalBtn/GeneralBtn';
+import { Link } from "react-router-dom";
 
 
 const MyAccount = () => {
@@ -48,6 +49,9 @@ const MyAccount = () => {
                         {/* {artistInfo.tattoostyle.map(style => {
                             <GeneralBtn btnText={`#${style}`}/>
                         })} */}
+                        <div className="d-flex">
+                            <Link to="/event/create"><GeneralBtn btnText={"Publish an event"}/></Link>
+                        </div>
                     </div>
                 </div>
             </div>

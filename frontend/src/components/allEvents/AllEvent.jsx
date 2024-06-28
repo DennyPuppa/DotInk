@@ -1,8 +1,5 @@
-import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
 import SingleEvent from '../singleEvent/SingleEvent';
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
 
 
 const AllEvent = (props) => {
@@ -29,22 +26,26 @@ const AllEvent = (props) => {
     }, [])
 
     return (
-        <Container>
-           <Row>
-            {allEvent.map((event, index) => (
-                    <Col key={`singleevent-${index}`} xs={12} md={4} lg={3}>
+        <div className='container-fluid'>
+            <div className='row'>
+                <div className='col'>
+                    <h2 className='event-title'>Ink Event around the World🌍</h2>
+                    {allEvent.map((event, index) => (
                         <SingleEvent
+                            key={`singleevent-${index}`}
                             title={event.title}
                             image={event.image}
-                            author={event.artistId.username}
+                            artist={event.artistId.username}
                             date={event.date}
-                            _id={event._id}
+                            _id={event.artistId._id}
                             avatar={event.artistId.avatar}
+                            city={event.city}
                         />
-                    </Col>
-                )).reverse()}
-            </Row> 
-        </Container>
+
+                    )).reverse()}
+                </div>
+            </div>
+        </div>
     )
 }
 

@@ -9,9 +9,9 @@ const MainComponent = () => {
 
     return (
         <div className="color invisible-scrollbar">
+            <AllEvent />
             <LocationSearch />
             <TattooStyle />
-            <AllEvent />
             <AllPosts />
         </div>
     )
