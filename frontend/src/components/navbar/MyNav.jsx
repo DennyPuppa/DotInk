@@ -10,7 +10,7 @@ const NavbarInk = () => {
 
   return (
     <Navbar className='my-navbar' expand="lg">
-      <Container fluid className='align-items-center px-lg-5'>
+      <Container fluid className='align-items-center'>
         <div className='d-flex align-items-center gap-1'>
           <i class="fa-solid fa-droplet nav-icon"></i>
           <Link className='nav-link' to="/"><p className='logo'>DotINK</p></Link>
@@ -19,7 +19,7 @@ const NavbarInk = () => {
         {!decodedSession && (
           <div className="d-flex gap-1">
             <Link className='nav-link' to="/login"><button className='btn-login'>Login</button></Link>
-            <Link className='nav-link' to="/registrazione"><button className='btn-registration'>Registrati</button></Link>
+            
           </div>
         )}
 

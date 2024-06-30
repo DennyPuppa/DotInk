@@ -28,22 +28,22 @@ const AllEvent = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col'>
-                    <h2 className='event-title'>Ink Event around the World🌍</h2>
+                <h2 className='event-title'>#Event around the World🌍</h2>
                     {allEvent.map((event, index) => (
-                        <SingleEvent
-                            key={`singleevent-${index}`}
-                            title={event.title}
-                            image={event.image}
-                            artist={event.artistId.username}
-                            date={event.date}
-                            _id={event.artistId._id}
-                            avatar={event.artistId.avatar}
-                            city={event.city}
-                        />
+                        <div className='col-12 col-md-6'>
+                            <SingleEvent
+                                key={`singleevent-${index}`}
+                                title={event.title}
+                                image={event.image}
+                                artist={event.artistId.username}
+                                date={event.date}
+                                _id={event.artistId._id}
+                                avatar={event.artistId.avatar}
+                                city={event.city}
+                            />
+                        </div>
 
                     )).reverse()}
-                </div>
             </div>
         </div>
     )

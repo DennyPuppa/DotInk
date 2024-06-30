@@ -49,12 +49,14 @@ artist.get('/artist/:id', async (req, res, next) => {
 })
 
 artist.post('/artist/create', cloudUpload.single('avatarImg'), async (req, res, next) => {
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
     const newArtist = new ArtistModel({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
+        password: hashedPassword,
         avatar: req.file.path,
         city: req.body.city,
         tattoostyle: req.body.tattoostyle

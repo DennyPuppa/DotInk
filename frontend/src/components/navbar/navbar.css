@@ -1,7 +1,7 @@
 :root {
     --black: #0b0d18;
     --grey: #b6b7ba;
-    --light: #f8f8f8;
+    --light: #f0f0f0;
     --white: #ffff;
 }
 
@@ -21,33 +21,29 @@
 /* CSS */
 
 .btn-login {
-    background-color: var(--third-color);
-    padding: 10px 30px;
-    border-radius: 15px 50px 50px 15px;
-    border: none;
-    color: var(--white);
-    text-align: center;
-}
-
-.btn-login:hover {
-    background-color: var(--third-color-hover);
+    background-color: var(--black);
+    color: var(--light);
+    border-radius: 25px;
+    padding: 5px 15px;
+    font-weight: 600;
+    border: 2px solid var(--black);
 }
 
 .btn-registration {
-    background-color: var(--secondary-color);
-    padding: 10px 30px;
-    border-radius: 50px 15px 15px 50px;
-    border: none;
-    color: var(--third-color);
-    text-align: center;
+    background-color: var(--light);
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 25px;
+    padding: 5px 15px;
+    font-weight: 600;
 }
 
 .btn-registration:hover {
-    background-color: var(--secondary-color-hover);
-    color: var(--third-color);
+    background-color: var(--black);
+    color: var(--white);
 }
 
-@media screen and (max-width: 376px) {
+/* @media screen and (max-width: 376px) {
     .btn-login, 
     .btn-registration {
         padding: 8px 20px;
@@ -62,4 +58,4 @@
     .btn-registration {
         padding: 5px 15px;
     }
-}
+} */

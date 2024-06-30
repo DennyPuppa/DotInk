@@ -1,23 +1,51 @@
-.card-container-light{
-    padding: 10px;
-    background-color: rgb(240, 240, 240);
+:root {
+    --black: rgb(11, 13, 24);
+    --black-absolute: rgba(11, 13, 24, 0.5);
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
 }
 
-.card-container-dark{
-    padding: 10px;
-    background-color: rgb(45, 45, 45);
+.event-title{
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
 }
 
-.card-title{
-    font-size: 18px;
+.event-card{
+    background-color: var(--white);
+    border-radius: 25px;
+    min-height: 400px;
+    position: relative;
+    box-shadow: 0px 1px 0px rgba(3, 7, 18, 0.00),
+        2px 3px 1px rgba(3, 7, 18, 0.01),
+        2px 4px 1px rgba(3, 7, 18, 0.01),
+        6px 10px 2px rgba(3, 7, 18, 0.02),
+        12px 21px 7px rgba(3, 7, 18, 0.02);
 }
 
-.card-img{
+.event-card .event-img{
     width: 100%;
-    max-height: 250px;
     object-fit: cover;
+    min-height: 400px;
+    border-radius: 25px;
 }
 
-.card-selected{
-    border: 2px solid red;
+.event-info{
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 400px;
+}
+
+.profile-picture-event {
+    width: 50px;
+    height: 50px;
+}
+
+.profile-picture-event img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

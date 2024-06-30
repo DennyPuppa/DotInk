@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import GeneralBtn from '../generalBtn/GeneralBtn';
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
 
 
 const MyAccount = () => {
@@ -35,33 +36,43 @@ const MyAccount = () => {
     }, [])
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className='col'>
-                    <div className="artist-bio">
-                        <div className="profile-picture">
-                            <img className="rounded-circle" src={artistInfo.avatar} alt="" />
-                        </div>
-                        <p>{artistInfo.firstname}</p>
-                        <p>{artistInfo.lastname}</p>
-                        <p>{artistInfo.username}</p>
-                        <p>{artistInfo.city}</p>
-                        {/* {artistInfo.tattoostyle.map(style => {
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+        >
+            <div className="container">
+                <div className="row">
+                    <div className='col'>
+                        <div className="artist-bio">
+                            <div className="profile-picture">
+                                <img className="rounded-circle" src={artistInfo.avatar} alt="" />
+                            </div>
+                            <p>{artistInfo.firstname}</p>
+                            <p>{artistInfo.lastname}</p>
+                            <p>{artistInfo.username}</p>
+                            <p>{artistInfo.city}</p>
+                            {/* {artistInfo.tattoostyle.map(style => {
                             <GeneralBtn btnText={`#${style}`}/>
                         })} */}
-                        <div className="d-flex">
-                            <Link to="/event/create"><GeneralBtn btnText={"Publish an event"}/></Link>
+                            <div className="d-flex">
+                                <Link to="/event/create"><GeneralBtn btnText={"Publish an event"} /></Link>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div>
+                    {artistPost.map(post => {
+                        console.log(post);
+                        <p>{post.title}</p>
+                    })}
+                </div>
             </div>
-            <div>
-                {artistPost.map(post => {
-                    console.log(post);
-                    <p>{post.title}</p>
-                })}
-            </div>
-        </div>
+        </motion.div>
     )
 }
 

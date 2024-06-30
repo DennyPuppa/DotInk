@@ -12,28 +12,22 @@ const SingleEvent = ({ _id, title, image, date, avatar, city, artist }) => {
 
     return (
         <div className="py-3">
-        <div className="post-card">
-            <div className="post-img-container">
-                <img src={image} alt="post Image" />
-                <div className="d-flex justify-content-between icon-container">
-                    <div className="icon-circle">
-                        <i class="fa-regular fa-heart post-icon"></i>
-                    </div>
-                    <div className="icon-circle">
-                        <i class="fa-solid fa-calendar post-icon"></i>
-                    </div>
-                </div>
-            </div>
+            <div className="event-card">
+                <img className="event-img" src={image} alt="Event" />
 
-            <div className="artist-info py-3 px-4">
-                <div className="d-flex justify-content-between align-items-center">
-                    <p onClick={navigateToDetails}><span>@{artist}</span>, {city}</p>
-                    <GeneralBtn btnText={`#${city}`} />
+                <div className="event-info p-2">
+                    <div className="d-flex align-items-center justify-content-between">
+                        <div className="d-flex align-items-center gap-2">
+                            <div className="profile-picture-event">
+                                <img className="rounded-circle" src={avatar} alt="Profile picture" />
+                            </div>
+                            <p className="fw-bold text-white" onClick={navigateToDetails}>@{artist}</p>
+                        </div>
+                        <GeneralBtn btnText={`#${city}`} />
+                    </div>
                 </div>
-                <p>{date}</p>
             </div>
         </div>
-    </div>
     )
 }
 

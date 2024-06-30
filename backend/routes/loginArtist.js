@@ -15,6 +15,8 @@ login.post('/login/artist', async (req, res) => {
     }
     try {
         const validPassword = await bcrypt.compare(req.body.password, artist.password);
+        console.log(artist.password);
+        console.log(req.body.password);
         if (!validPassword) {
             return res.status(403).send('Username o Password non valida');
         }

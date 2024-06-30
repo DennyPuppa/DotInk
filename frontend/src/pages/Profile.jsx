@@ -17,7 +17,7 @@ const Profile = () => {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-12 col-md-3 d-none d-md-block">
+                    <div className="col-12 col-md-3 pt-md-5 d-none d-md-block">
                         <Sidebar />
                     </div>
                     <div className="col-12 col-md-6 pt-md-5">

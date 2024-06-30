@@ -10,10 +10,10 @@ const useSession = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(!session){
-            console.log('LOGIN');
-            // navigate('/login')
-        }
+        // if(!session){
+        //     // console.log('LOGIN');
+        //     navigate('/login')
+        // }
     }, [navigate, session])
 
     return {decodedSession, session};

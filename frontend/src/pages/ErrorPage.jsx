@@ -1,5 +1,4 @@
 import MyNav from "../components/navbar/MyNav";
-import MyFooter from "../components/footer/MyFooter";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +17,6 @@ const ErrorPage = () => {
                 <p className="text-center">Oops, qualcosa è andato storto...</p>
                 <Button onClick={backHomePage}>Torna alla Home Page</Button>
             </div>
-            <MyFooter/>
         </div>
     )
 }

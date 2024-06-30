@@ -1,12 +1,11 @@
-.color {
-    
+.scroll-nav {    
     overflow-y: scroll;
     max-height: calc(100vh - 55px);
 }
 
 @media screen and (max-width: 426px) {
 
-    .color {
+    .scroll-nav {
         background-color: transparent;
         border: none;
     }

@@ -56,19 +56,19 @@ const ArtistSchema = new mongoose.Schema({
     }]
 }, {timestamps: true, strict: true})
 
-ArtistSchema.pre('save', async function(next){
-    const password = this.password;
-    if(password){
-        try {
-            const salt = await bcrypt.genSalt(10)
-            const hashedPassword = await bcrypt.hash(this.password, salt);
-            this.password = hashedPassword;
-            next();
-        } catch (error) {
-            next(error)
-        }
-    }
-})
+// ArtistSchema.pre('save', async function(next){
+//     const password = this.password;
+//     if(password){
+//         try {
+//             const salt = await bcrypt.genSalt(10)
+//             const hashedPassword = await bcrypt.hash(this.password, salt);
+//             this.password = hashedPassword;
+//             next();
+//         } catch (error) {
+//             next(error)
+//         }
+//     }
+// })
 
 const ArtistModel = mongoose.model('Artists', ArtistSchema);
 module.exports = ArtistModel;

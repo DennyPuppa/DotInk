@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Login = () => {
     
@@ -42,7 +43,11 @@ const Login = () => {
         <div className="container mt-5">
             <div className="row">
                 <div className="col d-flex flex-column justify-content-center align-items-center">
-                    <h2 className="mb-5">Sign In</h2>
+                    <h2 className="mb-5">Login</h2>
+                    <div className="d-flex align-items-center gap-1">
+                        <p>Do not have an account?</p>
+                        <Link className='nav-link' to="/registrazione"><button className='btn-registration'>Registrati</button></Link>
+                    </div>
                     <form onSubmit={handleSubmit}>
 
                         <div className="form-group mb-3">

@@ -27,7 +27,7 @@ const AllPosts = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col'>
+                <div className='col-12'>
                     {allPosts.map((post, index) => (
                         <SinglePost
                             key={`singlepost-${index}`}
