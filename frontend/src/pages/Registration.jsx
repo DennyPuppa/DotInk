@@ -1,13 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationPage = () => {
 
     const [formData, setFormData] = useState({})
     const [avatarFile, setAvatarFile] = useState(null)
     const [succesRegistration, setSuccesRegistration] = useState(null)
-    console.log(formData)
+    const [registrationMessage, setRegistrationMessage] = useState('')
+    const navigate = useNavigate();
 
     const onChangeFile = (e) => {
         setAvatarFile(e.target.files[0])
@@ -39,11 +41,13 @@ const RegistrationPage = () => {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-            setSuccesRegistration(true)
+            if (response.status === 201) {
+                navigate('/login')
+            }
             return response.data
         } catch (e) {
             setSuccesRegistration(false)
-            console.log(e.message)
+            setRegistrationMessage(e)
         }
     }
 
@@ -143,9 +147,9 @@ const RegistrationPage = () => {
                             </div>
                             <button type="submit" className="btn btn-primary">Create account</button>
                             {succesRegistration &&
-                                <Alert key="succes" variant="success" className="px-2 pt-1 pb-0 mt-2 text-center">
-                                    <p>Registrazione effettuata!</p>
-                                </Alert>
+                                (<Alert key="danger" variant="danger" className="px-2 pt-1 pb-0 mt-2 text-center">
+                                    <p>Registrazione effettuata</p>
+                                </Alert>)
                             }
                         </form>
                     </div>

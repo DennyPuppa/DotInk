@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import useSession from "../../hooks/useSession";
 import NavbarInk from "../navbar/MyNav";
 import './sidebar.css'
@@ -11,6 +11,13 @@ import GeneralBtn from "../generalBtn/GeneralBtn";
 const Sidebar = () => {
 
     const { session, decodedSession } = useSession()
+
+    const navigate = useNavigate();
+
+    const signOut = () => {
+        localStorage.removeItem('token');
+        navigate('/start');
+    }
 
     return (
         <motion.div
@@ -39,6 +46,7 @@ const Sidebar = () => {
                                     <p className="text-center">{decodedSession.username}</p>
                                 </div>
                                 <Link to='/account'><GeneralBtn btnText={'MyProfile'} /></Link>
+                                <p onClick={signOut}>Sign Out</p>
                             </div>
                         )}
                         <hr />

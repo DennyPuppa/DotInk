@@ -27,6 +27,7 @@ const AllPosts = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row'>
+            <h2 className='event-title'>#Feed✌</h2>
                 <div className='col-12'>
                     {allPosts.map((post, index) => (
                         <SinglePost

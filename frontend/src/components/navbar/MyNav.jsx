@@ -25,8 +25,9 @@ const NavbarInk = () => {
 
         {decodedSession && (
           <div className="d-flex align-items-center gap-3 d-md-none px-3">
-            <i class="fa-solid fa-user nav-icon"></i>
+            
             <i class="fa-solid fa-paper-plane nav-icon"></i>
+            
           </div>
         )}
       </Container>

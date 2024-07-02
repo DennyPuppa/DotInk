@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import MyProfile from "./pages/MyProfile";
 import PublicPostPage from "./pages/PostPage";
 import PublicEventPage from "./pages/EventPage";
+import StartPage from "./pages/StartPage";
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route index element={<HomePage />} />
+                <Route path="/start" element={<StartPage />} />
                 <Route path="/registrazione" element={<RegistrationPage />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/artist/:id" element={<Profile />}/>
