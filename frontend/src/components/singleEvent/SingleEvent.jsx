@@ -19,7 +19,7 @@ const SingleEvent = ({ _id, title, image, date, avatar, city, artist }) => {
                     <div className="d-flex align-items-center justify-content-between">
                         <div className="d-flex align-items-center gap-2">
                             <div className="profile-picture-event">
-                                <img className="rounded-circle" src={avatar} alt="Profile picture" />
+                                <img src={avatar} alt="Profile picture" />
                             </div>
                             <p className="fw-bold text-white" onClick={navigateToDetails}>@{artist}</p>
                         </div>

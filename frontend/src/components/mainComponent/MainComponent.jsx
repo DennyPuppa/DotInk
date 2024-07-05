@@ -22,8 +22,8 @@ const MainComponent = () => {
             <div className="scroll-nav invisible-scrollbar">
                 {/* <PublicPostFast /> */}
                 <AllEvent />
-                <LocationSearch />
-                <TattooStyle />
+                {/* <LocationSearch />
+                <TattooStyle /> */}
                 <AllPosts />
             </div>
         </motion.div>

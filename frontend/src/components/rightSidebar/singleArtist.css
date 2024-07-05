@@ -1,0 +1,21 @@
+.artist-container{
+    cursor: pointer;
+}
+
+.btn-artist-sidelinks {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.btn-artist-sidelinks:hover {
+    background: #ededed;
+    box-shadow: 10px 10px 20px #bebebe,
+        -10px -10px 20px #ffffff;
+    width: 100%;
+    border: none;
+
+}

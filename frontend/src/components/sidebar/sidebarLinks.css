@@ -1,3 +1,31 @@
-.side-link p{
+:root {
+    --black: rgb(11, 13, 24);
+    --black-absolute: rgba(11, 13, 24, 0.5);
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
+}
+
+.side-link p {
     font-weight: 600;
+}
+
+.btn-sidelinks {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.btn-sidelinks:hover {
+    
+    background: #ededed;
+    box-shadow: 20px 20px 30px #bebebe,
+        -20px -20px 30px #ffffff;
+    width: 100%;
+    border: none;
+    padding-left: 10px;
+
 }

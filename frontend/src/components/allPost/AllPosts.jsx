@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import SinglePost from '../singlePost/SinglePost';
+import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 
 const AllPosts = (props) => {
@@ -27,7 +29,18 @@ const AllPosts = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-            <h2 className='event-title'>#Feed✌</h2>
+                <div className='d-flex align-items-center justify-content-between px-3'>
+                    <h2 className='event-title'>#Feed✌</h2>
+                    <Link to='/post/create'>
+                        <motion.button
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="icon-circle"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                        </motion.button>
+                    </Link>
+                </div>
                 <div className='col-12'>
                     {allPosts.map((post, index) => (
                         <SinglePost

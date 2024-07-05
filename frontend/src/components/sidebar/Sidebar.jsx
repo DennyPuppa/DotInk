@@ -12,12 +12,6 @@ const Sidebar = () => {
 
     const { session, decodedSession } = useSession()
 
-    const navigate = useNavigate();
-
-    const signOut = () => {
-        localStorage.removeItem('token');
-        navigate('/start');
-    }
 
     return (
         <motion.div
@@ -36,22 +30,19 @@ const Sidebar = () => {
                         {decodedSession && (
                             <div className="d-flex flex-column gap-2 justify-content-center align-items-center py-3">
                                 <div className="profile-picture">
-                                    <img className="rounded-circle" src={decodedSession.avatar} alt="Profile picture" />
+                                    <img src={decodedSession.avatar} alt="Profile picture" />
                                 </div>
                                 <div>
-                                    <div className="d-flex gap-2">
+                                    <div className="d-flex gap-1">
                                         <p className="profile-info">{decodedSession.firstname}</p>
                                         <p className="profile-info">{decodedSession.lastname}</p>
                                     </div>
-                                    <p className="text-center">{decodedSession.username}</p>
+                                    <p className="text-center">@{decodedSession.username}</p>
                                 </div>
                                 <Link to='/account'><GeneralBtn btnText={'MyProfile'} /></Link>
-                                <p onClick={signOut}>Sign Out</p>
                             </div>
                         )}
-                        <hr />
                         <SidebarLinks />
-                        <hr />
                     </div>
                 </div>
             </div>

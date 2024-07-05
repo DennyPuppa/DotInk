@@ -30,7 +30,7 @@ const AllEvent = (props) => {
             <div className='row'>
                 <h2 className='event-title'>#Event around the World🌍</h2>
                     {allEvent.map((event, index) => (
-                        <div className='col-12 col-md-6'>
+                        <div className='col-12 col-lg-6'>
                             <SingleEvent
                                 key={`singleevent-${index}`}
                                 title={event.title}

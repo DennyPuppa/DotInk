@@ -1,21 +1,110 @@
 :root {
-    --primary-color: #050402;
-    --secondary-color: #C7CDBE;
-    --secondary-color-hover: #e7eddc;
-    --third-color: #242424;
-    --third-color-hover: #434343;
-    --payoff: yellow;
-    --white: white;
+  --black: rgb(11, 13, 24);
+  --black-absolute: rgba(11, 13, 24, 0.5);
+  --grey: #b6b7ba;
+  --light: #f8f8f8;
+  --white: #ffff;
 }
 
-.side-nav {
-    position: sticky;
-    top: 50px;
-    overflow-y: scroll;
-    max-height: 100vh;
+.side-nav-artist {
+  position: sticky;
+  top: 50px;
+  overflow-y: scroll;
+  max-height: 275px;
 }
 
 .invisible-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
+.btn-motion{
+  border: none;
+  width: 100%;
+}
+
+.square-event-container {
+  height: 200px;
+  border-radius: 25px;
+  box-shadow: 0px 1px 0px rgba(3, 7, 18, 0.00),
+    2px 3px 1px rgba(3, 7, 18, 0.01),
+    2px 4px 1px rgba(3, 7, 18, 0.01),
+    6px 10px 2px rgba(3, 7, 18, 0.02),
+    12px 21px 7px rgba(3, 7, 18, 0.02);
+  position: relative;
+}
+
+/* .square-event-container:hover {
+  scale: 1.1;
+  box-shadow: 0px 1px 0px rgba(3, 7, 18, 0.00),
+    2px 3px 1px rgba(3, 7, 18, 0.01),
+    2px 4px 1px rgba(3, 7, 18, 0.01),
+    6px 10px 2px rgba(3, 7, 18, 0.02),
+    12px 21px 7px rgba(3, 7, 18, 0.02);
+  position: relative;
+} */
+
+.square-event-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 25px;
+  background-color: var(--black);
+  opacity: 0.4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f8f8f8;
+}
+
+.overlay-text {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 75px);
+  text-align: center;
+  color: #f8f8f8;
+  z-index: 1;
+  font-weight: 600;
+  font-size: x-large;
+  text-shadow:  4px 3px 13px rgba(0,0,0,0.45);
+}
+
+.right-sidebar-artist{
+  border-radius: 25px;
+  box-shadow: 0px 1px 0px rgba(3, 7, 18, 0.00),
+    2px 3px 1px rgba(3, 7, 18, 0.01),
+    2px 4px 1px rgba(3, 7, 18, 0.01),
+    6px 10px 2px rgba(3, 7, 18, 0.02),
+    12px 21px 7px rgba(3, 7, 18, 0.02);
+    background-color: var(--white);
+}
+
+.find-artist{
+  width: 100%;
+  border: 2px solid var(--black);
+  border-radius: 25px;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.find-artist:focus{
+  border: 2px solid var(--black);
+}
+
+.search-box{
+  position: relative;
+}
+
+.search-box i{
+  position: absolute;
+  right: calc(0% - -10px);
+  top: calc(50% - 8px);
+}
