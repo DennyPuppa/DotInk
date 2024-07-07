@@ -1,0 +1,57 @@
+:root {
+    --black: rgb(11, 13, 24);
+    --black-absolute: rgba(11, 13, 24, 0.5);
+    --grey: #b6b7ba;
+    --light: #f8f8f8;
+    --white: #ffff;
+}
+
+/* LOGIN FORM */
+
+.form-box{
+    background-color: var(--white);
+    border-radius: 25px;
+    box-shadow: 0px 1px 0px rgba(3, 7, 18, 0.00),
+        2px 3px 1px rgba(3, 7, 18, 0.01),
+        2px 4px 1px rgba(3, 7, 18, 0.01),
+        6px 10px 2px rgba(3, 7, 18, 0.02),
+        12px 21px 7px rgba(3, 7, 18, 0.02);
+}
+
+.form-title{
+    font-weight: 600;
+}
+
+.form-input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--black);
+}
+
+.form-input:focus{
+    outline: none;
+}
+
+.btn-form{
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 25px;
+    border: none;
+    padding: 5px;
+}
+
+.after-form-action:hover{
+    text-decoration: underline;
+}
+
+.form-img-container{
+    width: 200px;
+    height: 100%;
+}
+
+.form-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px 0 0 25px;
+}

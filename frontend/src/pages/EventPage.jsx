@@ -1,7 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
-import Alert from 'react-bootstrap/Alert';
+import { Link } from "react-router-dom";
 import useSession from "../hooks/useSession";
+import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
+import './css/form.css'
+import formImage from '../assets/img/dotink-post.jpg'
 
 const PublicEventPage = () => {
 
@@ -9,8 +13,7 @@ const PublicEventPage = () => {
 
     const [formData, setFormData] = useState({})
     const [eventFile, setEventFile] = useState(null)
-    const [succesRegistration, setSuccesRegistration] = useState(null)
-    console.log(formData)
+    const navigate = useNavigate();
 
     const onChangeFile = (e) => {
         setEventFile(e.target.files[0])
@@ -42,19 +45,45 @@ const PublicEventPage = () => {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-            setSuccesRegistration(true)
+            if (response.status === 201) {
+                navigate('/')
+            }
             return response.data
         } catch (e) {
-            setSuccesRegistration(false)
             console.log(e.message)
         }
     }
 
     return (
-            <div className="container mt-5">
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+        >
+            <div className="container py-2">
+            <div className="row d-flex d-md-none">
+                <div className="col">
+                    <Link to="/"><i className="fa-solid fa-arrow-left fs-2 text-black"></i></Link>
+                </div>
+            </div>
                 <div className="row">
-                    <div className="col d-flex flex-column justify-content-center align-items-center">
-                        <h2 className="mb-5">Public Event</h2>
+                    <div className="col-12 d-flex flex-column justify-content-center align-items-center pt-5">
+                    <div className="form-box d-flex">
+                        <div className="d-none d-md-block">
+                            <div className="form-img-container">
+                                <img src={formImage} alt="" />
+                            </div>
+                        </div>
+                        <div className="d-flex flex-column justify-content-center align-items-center p-5">
+                            <h2 className="form-title">Create New #Event</h2>
+                            <div className='d-flex align-items-center gap-1 pb-3'>
+                                <i class="fa-solid fa-droplet nav-icon"></i>
+                                <p className='logo'>DotINK</p>
+                            </div>
                         <form encType="multipart/form-data" onSubmit={handleSubmit}>
                             <div className="form-group mb-3">
                                 <label htmlFor="title">Title</label>
@@ -62,7 +91,7 @@ const PublicEventPage = () => {
                                     onChange={onChangeInput}
                                     name="title"
                                     type="text"
-                                    className="form-control"
+                                    className="form-input"
                                     aria-describedby="title"
                                     placeholder="Enter title"
                                 />
@@ -73,7 +102,7 @@ const PublicEventPage = () => {
                                     onChange={onChangeInput}
                                     name="city"
                                     type="text"
-                                    className="form-control"
+                                    className="form-input"
                                     aria-describedby="city"
                                     placeholder="Enter city"
                                 />
@@ -84,7 +113,7 @@ const PublicEventPage = () => {
                                     onChange={onChangeInput}
                                     name="date"
                                     type="text"
-                                    className="form-control"
+                                    className="form-input"
                                     aria-describedby="date"
                                     placeholder="Enter date"
                                 />
@@ -99,16 +128,20 @@ const PublicEventPage = () => {
                                     aria-describedby="emailHelp"
                                 />
                             </div>
-                            <button type="submit" className="btn btn-primary">Public Event</button>
-                            {succesRegistration &&
-                                <Alert key="succes" variant="success" className="px-2 pt-1 pb-0 mt-2 text-center">
-                                    <p>Registrazione effettuata!</p>
-                                </Alert>
-                            }
+                            <motion.button
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                className="btn-form w-100 my-2"
+                                type="submit"
+                            >Public Event
+                            </motion.button>
                         </form>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            </motion.div>
     );
 }
 

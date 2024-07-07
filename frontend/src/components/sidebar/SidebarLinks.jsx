@@ -16,7 +16,7 @@ const SidebarLinks = () => {
     }
 
     return (
-        <div className="side-link d-flex flex-column gap-2 pb-2">
+        <div className="side-link d-flex flex-column gap-2 pb-3">
             <hr />
             <Link to="/">
                 <button className="btn-sidelinks">

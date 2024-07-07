@@ -63,26 +63,24 @@ const ArtistProfile = () => {
                         <div className='col-7'>
                             <div className="d-flex align-items-center justify-content-between">
                                 <div className="d-flex gap-1">
-                                    <p className="fw-bold">{artistInfo.firstname}</p>
-                                    <p className="fw-bold">{artistInfo.lastname}</p>
+                                    <p className="fw-bold ">{artistInfo.firstname}</p>
+                                    <p className="fw-bold ">{artistInfo.lastname}</p>
                                 </div>
                                 <GeneralBtn btnText={`#${artistInfo.city}`} />
                             </div>
-                            <div className="d-flex gap-1 align-items-center">
                                 <p>@{artistInfo.username}</p>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-evenly">
+                            <div className="d-flex align-items-center justify-content-evenly pt-3">
                                 <div className="d-flex gap-3">
                                     <div className="d-flex flex-column align-items-center">
-                                        <p className="fw-bold">{artistPost.length}</p>
+                                        <p className="fw-bold fs-5">{artistPost.length}</p>
                                         <p>post</p>
                                     </div>
                                     <div className="d-flex flex-column align-items-center">
-                                        <p className="fw-bold">{artistEvent.length}</p>
+                                        <p className="fw-bold fs-5">{artistEvent.length}</p>
                                         <p>event</p>
                                     </div>
                                     <div className="d-flex flex-column align-items-center">
-                                        <p className="fw-bold">{artistFollower}</p>
+                                        <p className="fw-bold fs-5">{artistFollower}</p>
                                         <p>follower</p>
                                     </div>
                                 </div>
@@ -93,6 +91,10 @@ const ArtistProfile = () => {
                             {/* {artistInfo.tattoostyle.map(style => (
                             <GeneralBtn btnText={`#${style}`}/>
                         ))} */}
+                        </div>
+                        <div className="d-flex justify-content-between pt-3 gap-2">
+                            <button className="btn btn-dark w-100">Follow</button>
+                            <button className="btn btn-dark w-100">Appointment</button>
                         </div>
                     </div>
                     <Tabs

@@ -29,7 +29,7 @@ const MyAccount = () => {
             const data = await response.json()
             setIsLoading(false)
             setArtistInfo(data)
-            setArtistPost(data.post)            
+            setArtistPost(data.post)
             setArtistEvent(data.event)
             setArtistFollower(data.followers.length)
             console.log(data);
@@ -87,6 +87,7 @@ const MyAccount = () => {
                                         <p>follower</p>
                                     </div>
                                 </div>
+
                             </div>
 
 
@@ -94,6 +95,10 @@ const MyAccount = () => {
                             {/* {artistInfo.tattoostyle.map(style => (
                             <GeneralBtn btnText={`#${style}`}/>
                         ))} */}
+                        </div>
+                        <div className="d-flex justify-content-between pt-3 gap-2">
+                            <button className="btn btn-dark w-100">Create Post</button>
+                            <button className="btn btn-dark w-100">Create Event</button>
                         </div>
                     </div>
                     <Tabs
@@ -114,6 +119,12 @@ const MyAccount = () => {
                                             />
                                         </div>
                                     ))}
+                                    {artistPost.length === 0 && (
+                                        <div className="d-flex flex-column justify-content-center align-items-center py-2">
+                                            <p className="fs-3 fw-semibold">Share it with the world</p>
+                                            <p>Create your first #Post</p>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </Tab>
@@ -130,6 +141,12 @@ const MyAccount = () => {
                                             />
                                         </div>
                                     ))}
+                                    {artistEvent.length === 0 && (
+                                        <div className="d-flex flex-column justify-content-center align-items-center py-2">
+                                            <p className="fs-3 fw-semibold">Share it with the world</p>
+                                            <p>Create your first #Event</p>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </Tab>
