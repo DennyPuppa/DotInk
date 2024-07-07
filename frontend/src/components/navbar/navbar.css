@@ -5,6 +5,12 @@
     --white: #ffff;
 }
 
+a {
+    color: var(--black) !important;
+    text-decoration: none !important;
+    font-family: "Jost", sans-serif;
+}
+
 .nav-icon{
     color: var(--black);
     font-size: x-large;
@@ -16,6 +22,8 @@
     font-weight: 900;
     font-style: normal;
     font-size: 24px;
+    color: var(--black);
+    text-decoration: none;
 }
 
 /* CSS */

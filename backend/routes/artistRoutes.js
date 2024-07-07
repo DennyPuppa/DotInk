@@ -34,14 +34,14 @@ artist.get('/', (req, res) => {
 })
 
 artist.get('/artists', async (req, res) => {
-    const artists = await ArtistModel.find().populate('post').populate('event');
+    const artists = await ArtistModel.find().populate('post').populate('event').populate('follows').populate('followers');
     res.status(200).json(artists);
 })
 
 artist.get('/artist/:id', async (req, res, next) => {
     const id = req.params.id;
     try {
-        const artist = await ArtistModel.findById(id).populate('post').populate('event');
+        const artist = await ArtistModel.findById(id).populate('post').populate('event').populate('follows').populate('followers');
         res.status(200).json(artist);
     } catch (error) {
         // res.status(500).json({ message: err.message });
@@ -83,18 +83,6 @@ artist.put('/artist/modify/:id', async (req, res, next) => {
     }
 })
 
-// artist.put('/artist/follow/:id', async (req, res, next) => {
-//     const id = req.params.id;
-//     const follower = req.body;
-//     try {
-//         const artistUpdate = await ArtistModel.findByIdAndUpdate(id, follower)
-//         res.status(200).json(artistUpdate);
-//     } catch (error) {
-//         // res.status(500).json({ message: err.message });
-//         next(error)
-//     }
-// })
-
 artist.delete('/artist/delete/:id', async (req, res, next) => {
 
     const id = req.params.id;
@@ -106,6 +94,23 @@ artist.delete('/artist/delete/:id', async (req, res, next) => {
         next(error)
     }
 
+})
+
+artist.post('/artist/:me/follow/:id', async (req, res, next) => {
+    const me = req.params.me;
+    const id = req.params.id;
+    try {
+        const myArtist = await ArtistModel.findById(me)
+        const followArtist = await ArtistModel.findById(id)
+        myArtist.follows.push(followArtist)
+            followArtist.followers.push(myArtist)
+            await myArtist.save()
+            await followArtist.save()
+            res.status(201).json({ message: 'follow' });
+
+    } catch (error) {
+        next(error)
+    }
 })
 
 module.exports = artist;

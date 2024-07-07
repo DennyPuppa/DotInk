@@ -99,7 +99,7 @@ const Login = () => {
                             </form>
                             <div className="d-flex align-items-center gap-1 pt-5">
                                 <p>Don't have an account?</p>
-                                <Link className='nav-link' to="/registrazione"><span className="after-form-action">Sign Up</span></Link>
+                                <Link to="/registrazione"><span className="after-form-action">Sign Up</span></Link>
                             </div>
                         </div>
                     </div>

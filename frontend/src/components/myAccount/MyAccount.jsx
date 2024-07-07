@@ -53,7 +53,7 @@ const MyAccount = () => {
                 ease: [0, 0.71, 0.2, 1.01]
             }}
         >
-            <div className="scroll-nav invisible-scrollbar">
+            <div className="invisible-scrollbar">
                 <div className="container">
                     <div className="row artist-bio py-3">
                         <div className="col-5">
@@ -97,17 +97,18 @@ const MyAccount = () => {
                         ))} */}
                         </div>
                         <div className="d-flex justify-content-between pt-3 gap-2">
-                            <button className="btn btn-dark w-100">Create Post</button>
-                            <button className="btn btn-dark w-100">Create Event</button>
+                            <Link className="w-100" to='/post/create'><button className="btn btn-dark">Create Post</button></Link>
+                            <Link className="w-100" to='/event/create'><button className="btn btn-dark">Create Event</button></Link>
                         </div>
                     </div>
                     <Tabs
                         defaultActiveKey="posts"
                         id="uncontrolled-tab-example"
                         className="my-3"
+                        justify
                     >
-                        <Tab eventKey="posts" title="Post">
-                            <div className="container-fluid">
+                        <Tab eventKey="posts" title={<i class="fa-solid fa-table-cells"></i>}>
+                            <div className="container-fluid scroll-tabs invisible-scrollbar">
                                 <div className="row">
                                     {artistPost.map((post, index) => (
 
@@ -128,8 +129,8 @@ const MyAccount = () => {
                                 </div>
                             </div>
                         </Tab>
-                        <Tab eventKey="events" title="Event">
-                            <div className="container-fluid">
+                        <Tab eventKey="events" title={<i class="fa-solid fa-calendar"></i>}>
+                            <div className="container-fluid scroll-tabs invisible-scrollbar">
                                 <div className="row">
                                     {artistEvent.map((event, index) => (
 

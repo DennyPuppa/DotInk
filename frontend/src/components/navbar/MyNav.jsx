@@ -12,12 +12,12 @@ const NavbarInk = () => {
     <Navbar className='my-navbar' expand="lg">
         <div className='d-flex align-items-center gap-1 px-2 px-md-0'>
           <i class="fa-solid fa-droplet nav-icon"></i>
-          <Link className='nav-link' to="/"><p className='logo'>DotINK</p></Link>
+          <Link to="/"><p className='logo'>DotINK</p></Link>
         </div>
 
         {!decodedSession && (
           <div className="d-flex gap-1">
-            <Link className='nav-link' to="/login"><button className='btn-login'>Login</button></Link>
+            <Link to="/login"><button className='btn-login'>Login</button></Link>
             
           </div>
         )}

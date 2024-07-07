@@ -7,6 +7,7 @@ const AllEvent = (props) => {
     const [allEvent, setAllEvent] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
+
     const getAllEvent = async () => {
         setIsLoading(true)
         try {
@@ -29,21 +30,21 @@ const AllEvent = (props) => {
         <div className='container-fluid'>
             <div className='row'>
                 <h2 className='event-title'>#Event around the World🌍</h2>
-                    {allEvent.map((event, index) => (
-                        <div className='col-12 col-lg-6'>
-                            <SingleEvent
-                                key={`singleevent-${index}`}
-                                title={event.title}
-                                image={event.image}
-                                artist={event.artistId.username}
-                                date={event.date}
-                                _id={event.artistId._id}
-                                avatar={event.artistId.avatar}
-                                city={event.city}
-                            />
-                        </div>
+                {allEvent.map((event, index) => (
+                    <div className='col-12 col-lg-6'>
+                        <SingleEvent
+                            key={`singleevent-${index}`}
+                            title={event.title}
+                            image={event.image}
+                            artist={event.artistId.username}
+                            date={event.date}
+                            _id={event.artistId._id}
+                            avatar={event.artistId.avatar}
+                            city={event.city}
+                        />
+                    </div>
 
-                    )).reverse()}
+                )).reverse()}
             </div>
         </div>
     )
