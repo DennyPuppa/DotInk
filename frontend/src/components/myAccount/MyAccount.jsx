@@ -97,8 +97,8 @@ const MyAccount = () => {
                         ))} */}
                         </div>
                         <div className="d-flex justify-content-between pt-3 gap-2">
-                            <Link className="w-100" to='/post/create'><button className="btn btn-dark">Create Post</button></Link>
-                            <Link className="w-100" to='/event/create'><button className="btn btn-dark">Create Event</button></Link>
+                            <Link className="w-100" to='/post/create'><button className="btn-action-artist w-100">New Post</button></Link>
+                            <Link className="w-100" to='/event/create'><button className="btn-action-artist w-100">New Event</button></Link>
                         </div>
                     </div>
                     <Tabs

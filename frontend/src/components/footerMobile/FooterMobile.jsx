@@ -24,7 +24,7 @@ const FooterMobile = () => {
                         {decodedSession && (
                             <Link to="/account">
                                 <div className='footer-avatar-picture'>
-                                    <img className='rounded-circle' src={decodedSession.avatar} alt="" />
+                                    <img src={decodedSession.avatar} alt="" />
                                 </div>
                             </Link>
                         )}

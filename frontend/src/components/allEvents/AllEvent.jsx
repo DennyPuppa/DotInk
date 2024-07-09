@@ -44,7 +44,7 @@ const AllEvent = (props) => {
                         />
                     </div>
 
-                )).reverse()}
+                )).reverse().slice(0, 6)}
             </div>
         </div>
     )

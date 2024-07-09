@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion"
 import './css/form.css'
 import formImage from '../assets/img/dotink-post.jpg'
+import { FileUploader } from "react-drag-drop-files";
+import './css/customDragDrop.css'
 
 const PublicEventPage = () => {
 
@@ -15,9 +17,13 @@ const PublicEventPage = () => {
     const [eventFile, setEventFile] = useState(null)
     const navigate = useNavigate();
 
-    const onChangeFile = (e) => {
-        setEventFile(e.target.files[0])
-    }
+    // const onChangeFile = (e) => {
+    //     setEventFile(e.target.files[0])
+    // }
+
+    const handleChange = (file) => {
+        setEventFile(file);
+    };
 
     const onChangeInput = (e) => {
         const { name, value } = e.target
@@ -65,60 +71,68 @@ const PublicEventPage = () => {
             }}
         >
             <div className="container py-2">
-            <div className="row d-flex d-md-none">
-                <div className="col">
-                    <Link to="/"><i className="fa-solid fa-arrow-left fs-2 text-black"></i></Link>
+                <div className="row d-flex d-md-none">
+                    <div className="col">
+                        <Link to="/"><i className="fa-solid fa-arrow-left fs-2 text-black"></i></Link>
+                    </div>
                 </div>
-            </div>
                 <div className="row">
                     <div className="col-12 d-flex flex-column justify-content-center align-items-center pt-5">
-                    <div className="form-box d-flex">
-                        <div className="d-none d-md-block">
-                            <div className="form-img-container">
-                                <img src={formImage} alt="" />
+                        <div className="form-box d-flex">
+                            <div className="d-none d-md-block">
+                                <div className="form-img-container">
+                                    <img src={formImage} alt="" />
+                                </div>
                             </div>
-                        </div>
-                        <div className="d-flex flex-column justify-content-center align-items-center p-5">
-                            <h2 className="form-title">Create New #Event</h2>
-                            <div className='d-flex align-items-center gap-1 pb-3'>
-                                <i class="fa-solid fa-droplet nav-icon"></i>
-                                <p className='logo'>DotINK</p>
-                            </div>
-                        <form encType="multipart/form-data" onSubmit={handleSubmit}>
-                            <div className="form-group mb-3">
-                                <label htmlFor="title">Title</label>
-                                <input
-                                    onChange={onChangeInput}
-                                    name="title"
-                                    type="text"
-                                    className="form-input"
-                                    aria-describedby="title"
-                                    placeholder="Enter title"
-                                />
-                            </div>
-                            <div className="form-group mb-3">
-                                <label htmlFor="city">City</label>
-                                <input
-                                    onChange={onChangeInput}
-                                    name="city"
-                                    type="text"
-                                    className="form-input"
-                                    aria-describedby="city"
-                                    placeholder="Enter city"
-                                />
-                            </div>
-                            <div className="form-group mb-3">
-                                <label htmlFor="date">Date</label>
-                                <input
-                                    onChange={onChangeInput}
-                                    name="date"
-                                    type="text"
-                                    className="form-input"
-                                    aria-describedby="date"
-                                    placeholder="Enter date"
-                                />
-                            </div>
-                            <div className="form-group mb-3">
+                            <div className="d-flex flex-column justify-content-center align-items-center p-5">
+                                <h2 className="form-title">Create New #Event</h2>
+                                <div className='d-flex align-items-center gap-1 pb-3'>
+                                    <i class="fa-solid fa-droplet nav-icon"></i>
+                                    <p className='logo'>DotINK</p>
+                                </div>
+                                <form encType="multipart/form-data" onSubmit={handleSubmit}>
+                                    <div className="form-group mb-3">
+                                        <FileUploader handleChange={handleChange} name="eventImg" type="file" />
+                                        {/* <label htmlFor="inputPostImg">File input</label>
+                                    <input
+                                        onChange={onChangeFile}
+                                        type="file"
+                                        name="postImg"
+                                        className="form-control"
+                                        aria-describedby="emailHelp"
+                                    /> */}
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <input
+                                            onChange={onChangeInput}
+                                            name="title"
+                                            type="text"
+                                            className="form-input"
+                                            aria-describedby="title"
+                                            placeholder="Enter title"
+                                        />
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <input
+                                            onChange={onChangeInput}
+                                            name="city"
+                                            type="text"
+                                            className="form-input"
+                                            aria-describedby="city"
+                                            placeholder="Enter city"
+                                        />
+                                    </div>
+                                    <div className="form-group mb-3">
+                                        <input
+                                            onChange={onChangeInput}
+                                            name="date"
+                                            type="text"
+                                            className="form-input"
+                                            aria-describedby="date"
+                                            placeholder="Enter date"
+                                        />
+                                    </div>
+                                    {/* <div className="form-group mb-3">
                                 <label htmlFor="inputEventImg">File input</label>
                                 <input
                                     onChange={onChangeFile}
@@ -127,21 +141,21 @@ const PublicEventPage = () => {
                                     className="form-control"
                                     aria-describedby="emailHelp"
                                 />
+                            </div> */}
+                                    <motion.button
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        className="btn-form w-100 my-2"
+                                        type="submit"
+                                    >Public Event
+                                    </motion.button>
+                                </form>
                             </div>
-                            <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="btn-form w-100 my-2"
-                                type="submit"
-                            >Public Event
-                            </motion.button>
-                        </form>
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </motion.div>
+        </motion.div>
     );
 }
 

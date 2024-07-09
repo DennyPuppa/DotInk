@@ -14,7 +14,7 @@
 .event-card{
     background-color: var(--white);
     border-radius: 25px;
-    min-height: 400px;
+    max-height: 400px;
     position: relative;
     box-shadow: 0px 1px 0px rgba(3, 7, 18, 0.00),
         2px 3px 1px rgba(3, 7, 18, 0.01),
@@ -26,7 +26,7 @@
 .event-card .event-img{
     width: 100%;
     object-fit: cover;
-    min-height: 400px;
+    height: 400px;
     border-radius: 25px;
 }
 
@@ -37,6 +37,10 @@
     left: 0;
     right: 0;
     min-height: 400px;
+}
+
+.event-info p{
+    text-shadow: 2px 2px 6px rgba(255,255,255,0.2);
 }
 
 .profile-picture-event {

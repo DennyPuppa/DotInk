@@ -23,18 +23,20 @@ footer{
     width: 50px;
     height: 50px;
     background-color: var(--grey);
-    border-radius: 50%;
+    border-radius: 12px;
     text-align: center;
     padding-top: 12px;
 }
 
 .footer-avatar-picture{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
+    border-radius: 12px;
 }
 
 .footer-avatar-picture img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 12px;
 }

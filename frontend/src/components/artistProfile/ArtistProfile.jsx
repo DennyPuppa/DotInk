@@ -8,7 +8,6 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import ArtistEvent from "./ArtistEvent";
 import GeneralBtn from "../generalBtn/GeneralBtn";
-import FollowBtn from "../followBtn/FollowBtn";
 
 
 const ArtistProfile = () => {
@@ -24,7 +23,7 @@ const ArtistProfile = () => {
     const [isLoading, setIsLoading] = useState(false)
 
     const [isFollow, setIsFollow] = useState()
-    const [btnText, setBtnText] = useState('')
+    const [btnText, setBtnText] = useState()
 
     const getArtistInfo = async () => {
         setIsLoading(true)
@@ -39,10 +38,10 @@ const ArtistProfile = () => {
             const myFollow = await data.followers.filter(follower => follower._id.includes(decodedSession._id))
             if (myFollow.length === 0) {
                 setIsFollow(false)
-                setBtnText('Follow')
+                setBtnText(<i class="fa-solid fa-user-plus"></i>)
             } else {
                 setIsFollow(true);
-                setBtnText('Unfollow')
+                setBtnText(<i class="fa-solid fa-check"></i>)
             }
             return data
         } catch (error) {
@@ -96,6 +95,7 @@ const ArtistProfile = () => {
                                 <div className="d-flex gap-1">
                                     <p className="fw-bold ">{artistInfo.firstname}</p>
                                     <p className="fw-bold ">{artistInfo.lastname}</p>
+
                                 </div>
                                 <GeneralBtn btnText={`#${artistInfo.city}`} />
                             </div>
@@ -115,6 +115,7 @@ const ArtistProfile = () => {
                                         <p>follower</p>
                                     </div>
                                 </div>
+
                             </div>
 
 
@@ -124,8 +125,8 @@ const ArtistProfile = () => {
                         ))} */}
                         </div>
                         <div className="d-flex justify-content-between pt-3 gap-2">
-                            <button onClick={handleFollow} className={!isFollow ? "btn btn-dark w-100" : "btn btn-danger w-100"}>{btnText}</button>
-                            <button className="btn btn-dark w-100">Appointment</button>
+                            <button onClick={handleFollow} className={!isFollow ? "btn-action-artist w-100" : "btn-action-artist-selected w-100"}>{btnText}</button>
+                            <button className="btn-action-artist w-100">Appointment</button>
                         </div>
                     </div>
                     <Tabs

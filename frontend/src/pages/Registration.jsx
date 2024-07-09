@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import './css/form.css'
 import { motion } from "framer-motion"
+import { FileUploader } from "react-drag-drop-files";
+import './css/customDragDrop.css'
 
 const RegistrationPage = () => {
 
@@ -12,9 +14,13 @@ const RegistrationPage = () => {
     const [avatarFile, setAvatarFile] = useState(null)
     const navigate = useNavigate();
 
-    const onChangeFile = (e) => {
-        setAvatarFile(e.target.files[0])
-    }
+    // const onChangeFile = (e) => {
+    //     setAvatarFile(e.target.files[0])
+    // }
+
+    const handleChange = (file) => {
+        setAvatarFile(file);
+    };
 
     const onChangeInput = (e) => {
         const { name, value } = e.target
@@ -68,7 +74,7 @@ const RegistrationPage = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12 d-flex flex-column justify-content-center align-items-center pt-5">
+                    <div className="col-12 d-flex flex-column justify-content-center align-items-center pt-2">
                         <div className="form-box d-flex">
                             <div className="d-none d-md-block">
                                 <div className="form-img-container">
@@ -155,8 +161,20 @@ const RegistrationPage = () => {
                                                 placeholder="Enter your Tattoo Style"
                                             />
                                         </div>
+                                        
                                     </div>
                                     <div className="form-group mb-3">
+                                            <FileUploader handleChange={handleChange} name="avatarImg" type="file" />
+                                            {/* <label htmlFor="inputPostImg">File input</label>
+                                    <input
+                                        onChange={onChangeFile}
+                                        type="file"
+                                        name="postImg"
+                                        className="form-control"
+                                        aria-describedby="emailHelp"
+                                    /> */}
+                                        </div>
+                                    {/* <div className="form-group mb-3">
                                         <label htmlFor="inputAvatar">File input</label>
                                         <input
                                             onChange={onChangeFile}
@@ -166,7 +184,7 @@ const RegistrationPage = () => {
                                             aria-describedby="emailHelp"
                                             placeholder="Enter email"
                                         />
-                                    </div>
+                                    </div> */}
                                     <motion.button
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.9 }}
