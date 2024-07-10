@@ -15,3 +15,10 @@
     border: none;
     font-family: "Jost", sans-serif;
 }
+
+@media screen and (max-width: 431px) {
+    .general-btn {
+        font-size: small;
+        padding: 2px 8px;
+    }
+}

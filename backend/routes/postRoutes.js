@@ -41,7 +41,7 @@ post.get('/post', async (req, res) => {
 post.get('/post/:id', async (req, res, next) => {
     const id = req.params.id;
     try {
-        const post = await PostModel.findById(id).populate('artistId')
+        const post = await PostModel.findById(id).populate('artistId');
         res.status(200).json(post);
     } catch (error) {
         // res.status(500).json({ message: err.message });
@@ -93,6 +93,21 @@ post.delete('/post/delete/:id', async (req, res, next) => {
         next(error)
     }
 
+})
+
+post.post('/like/:id/:me/', async (req, res, next) => {
+    const me = req.params.me;
+    const id = req.params.id;
+    try {
+        const myArtist = await ArtistModel.findById(me)
+        const post = await PostModel.findById(id)
+        post.postLike.push(myArtist)
+        await post.save()
+        res.status(201).json({ message: 'Like Post' });
+
+    } catch (error) {
+        next(error)
+    }
 })
 
 module.exports = post;

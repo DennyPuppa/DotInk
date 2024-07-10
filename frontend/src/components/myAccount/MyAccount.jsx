@@ -72,7 +72,7 @@ const MyAccount = () => {
                             <div className="d-flex gap-1 align-items-center">
                                 <p>@{artistInfo.username}</p>
                             </div>
-                            <div className="d-flex align-items-center justify-content-evenly">
+                            <div className="d-flex align-items-center justify-content-evenly pt-3">
                                 <div className="d-flex gap-3">
                                     <div className="d-flex flex-column align-items-center">
                                         <p className="fw-bold">{artistPost.length}</p>
@@ -119,7 +119,7 @@ const MyAccount = () => {
                                                 tattoostyle={post.tattoostyle}
                                             />
                                         </div>
-                                    ))}
+                                    )).reverse()}
                                     {artistPost.length === 0 && (
                                         <div className="d-flex flex-column justify-content-center align-items-center py-2">
                                             <p className="fs-3 fw-semibold">Share it with the world</p>
@@ -141,7 +141,7 @@ const MyAccount = () => {
                                                 city={event.city}
                                             />
                                         </div>
-                                    ))}
+                                    )).reverse()}
                                     {artistEvent.length === 0 && (
                                         <div className="d-flex flex-column justify-content-center align-items-center py-2">
                                             <p className="fs-3 fw-semibold">Share it with the world</p>

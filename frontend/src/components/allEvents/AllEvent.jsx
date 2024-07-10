@@ -15,7 +15,6 @@ const AllEvent = (props) => {
             const data = await response.json()
             setIsLoading(false)
             setAllEvent(data)
-            console.log(data);
             return data
         } catch (error) {
             console.log(error.message)

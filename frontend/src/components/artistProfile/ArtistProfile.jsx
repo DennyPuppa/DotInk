@@ -147,7 +147,7 @@ const ArtistProfile = () => {
                                                 tattoostyle={post.tattoostyle}
                                             />
                                         </div>
-                                    ))}
+                                    )).reverse()}
                                     {artistPost.length === 0 && (
                                         <div className="d-flex flex-column justify-content-center align-items-center py-2">
                                             <p className="fs-3 fw-semibold">Share it with the world</p>
@@ -169,7 +169,7 @@ const ArtistProfile = () => {
                                                 city={event.city}
                                             />
                                         </div>
-                                    ))}
+                                    )).reverse()}
                                     {artistEvent.length === 0 && (
                                         <div className="d-flex flex-column justify-content-center align-items-center py-2">
                                             <p className="fs-3 fw-semibold">Share it with the world</p>

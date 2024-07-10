@@ -39,7 +39,10 @@ const Sidebar = () => {
                                     </div>
                                     <p className="text-center">@{decodedSession.username}</p>
                                 </div>
-                                <Link to='/account'><GeneralBtn btnText={'MyProfile'} /></Link>
+                                <Link to='/account'><motion.div
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
+                                        ><GeneralBtn btnText={'MyProfile'} /></motion.div></Link>
                             </div>
                         )}
                         <SidebarLinks />

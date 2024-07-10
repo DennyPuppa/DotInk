@@ -26,6 +26,11 @@ const SingleEvent = ({ _id, title, image, date, avatar, city, artist }) => {
                         <GeneralBtn btnText={`#${city}`} />
                     </div>
                 </div>
+                {/* <div className="event-date">
+                    <div className="d-flex justify-content-center pb-2">
+                        <GeneralBtn btnText={date}/>
+                    </div>
+                </div> */}
             </div>
         </div>
     )

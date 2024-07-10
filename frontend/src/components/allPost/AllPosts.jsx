@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 import SinglePost from '../singlePost/SinglePost';
 import { Link } from 'react-router-dom';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import useSession from "../../hooks/useSession";
 
 
 const AllPosts = (props) => {
 
+    const { session, decodedSession } = useSession()
+
     const [allPosts, setAllPosts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [isLike, setIsLike] = useState()
 
     const getAllPosts = async () => {
         setIsLoading(true)
@@ -16,6 +20,12 @@ const AllPosts = (props) => {
             const data = await response.json()
             setIsLoading(false)
             setAllPosts(data)
+            const myLike = await data.postLike.filter(like => like._id.includes(decodedSession._id))
+            if (myLike.length === 0) {
+                setIsLike(true)
+            } else {
+                setIsLike(false);
+            }
             return data
         } catch (error) {
             console.log(error.message)
@@ -24,7 +34,7 @@ const AllPosts = (props) => {
 
     useEffect(() => {
         getAllPosts()
-    }, [])
+    }, [isLike])
 
     return (
         <div className='container-fluid'>
@@ -54,6 +64,8 @@ const AllPosts = (props) => {
                             _id={post.artistId._id}
                             avatar={post.artistId.avatar}
                             style={post.tattoostyle}
+                            isLike={isLike}
+                            setIsLike={setIsLike}
                         />
 
                     )).reverse()}

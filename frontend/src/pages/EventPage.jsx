@@ -126,7 +126,7 @@ const PublicEventPage = () => {
                                         <input
                                             onChange={onChangeInput}
                                             name="date"
-                                            type="text"
+                                            type="date"
                                             className="form-input"
                                             aria-describedby="date"
                                             placeholder="Enter date"
