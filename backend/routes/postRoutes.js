@@ -98,9 +98,12 @@ post.delete('/post/delete/:id', async (req, res, next) => {
 post.post('/like/:id/:me/', async (req, res, next) => {
     const me = req.params.me;
     const id = req.params.id;
+    console.log(me);
+    console.log(id);
     try {
         const myArtist = await ArtistModel.findById(me)
         const post = await PostModel.findById(id)
+        console.log(post);
         post.postLike.push(myArtist)
         await post.save()
         res.status(201).json({ message: 'Like Post' });

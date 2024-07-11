@@ -1,11 +1,11 @@
 import "./singlePost.css"
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GeneralBtn from "../generalBtn/GeneralBtn";
 import { motion } from "framer-motion"
 import useSession from "../../hooks/useSession";
 
-const SinglePost = ({ artist, city, title, description, image, postLike, _id, avatar, style, isLike, setIsLike }) => {
+const SinglePost = ({ artist, city, title, description, image, postLike, _id, avatar, style, getAllPosts }) => {
 
     const { session, decodedSession } = useSession()
 
@@ -14,6 +14,8 @@ const SinglePost = ({ artist, city, title, description, image, postLike, _id, av
     const navigateToDetails = () => {
         navigate("/artist/" + _id)
     }
+
+    const [isLike, setIsLike] = useState()
 
     const handleLike = async () => {
         if (!isLike) {
@@ -26,6 +28,7 @@ const SinglePost = ({ artist, city, title, description, image, postLike, _id, av
                 })
                 const data = await response.json()
                 setIsLike(true)
+                getAllPosts()
 
                 return data
             } catch (error) {
@@ -33,6 +36,16 @@ const SinglePost = ({ artist, city, title, description, image, postLike, _id, av
             }
         }
     }
+
+    useEffect(() => {
+        if (postLike) {
+            if (postLike.includes(decodedSession._id)) {
+                setIsLike(true)
+            } else {
+                setIsLike(false);
+            }
+        }
+    }, [postLike])
 
     return (
         <motion.div
@@ -59,7 +72,7 @@ const SinglePost = ({ artist, city, title, description, image, postLike, _id, av
                             <div className="d-flex align-items-center gap-2">
                                 <div className="d-flex align-items-center gap-1">
                                 <i class="fs-6 fa-regular fa-heart"></i>
-                                <p>{postLike}</p>
+                                <p>{postLike.length}</p>
                                 </div>    
                                 <GeneralBtn btnText={`#${style}`} />
                             </div>

@@ -11,21 +11,16 @@ const AllPosts = (props) => {
 
     const [allPosts, setAllPosts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [isLike, setIsLike] = useState()
 
     const getAllPosts = async () => {
         setIsLoading(true)
         try {
             const response = await fetch(process.env.REACT_APP_BASEURL + '/post')
             const data = await response.json()
+            console.log(data);
             setIsLoading(false)
             setAllPosts(data)
-            const myLike = await data.postLike.filter(like => like._id.includes(decodedSession._id))
-            if (myLike.length === 0) {
-                setIsLike(true)
-            } else {
-                setIsLike(false);
-            }
+            
             return data
         } catch (error) {
             console.log(error.message)
@@ -34,7 +29,7 @@ const AllPosts = (props) => {
 
     useEffect(() => {
         getAllPosts()
-    }, [isLike])
+    }, [])
 
     return (
         <div className='container-fluid'>
@@ -60,12 +55,11 @@ const AllPosts = (props) => {
                             title={post.title}
                             description={post.description}
                             image={post.image}
-                            postLike={post.postLike.length}
-                            _id={post.artistId._id}
+                            postLike={post.postLike}
+                            _id={post._id}
                             avatar={post.artistId.avatar}
                             style={post.tattoostyle}
-                            isLike={isLike}
-                            setIsLike={setIsLike}
+                            getAllPosts={getAllPosts}
                         />
 
                     )).reverse()}
